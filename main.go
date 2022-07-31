@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"github.com/gin-gonic/gin"
 )
+
 //user format struct
 type User struct {
 	Id      			int    	`json:"id"`
@@ -36,13 +37,6 @@ var Names = [...]string{
 	"Ana",
 }
 
-var PrimarySubjects = [...]string{
-	"Science",
-	"Technology",
-	"Engineering",
-	"Math",
-}
-
 var Science = [...]string{
 	"Biology",
 	"Physics",
@@ -54,12 +48,14 @@ var Technology = [...]string{
 	"Machine Learning",
 	"Game Development",
 }
+
 var Engineering = [...]string{
 	"Robotics",
 	"Electronics",
 	"Mechanical",
 	"Civil",
 }
+
 var Math = [...]string{
 	"Algebra",
 	"Geometry",
@@ -84,6 +80,7 @@ func createTutorList() {
 	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Mo", PrimarySubject: "Math", SecondarySubject: "Calculus"})
 	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Xiaoyan", PrimarySubject: "Engineering", SecondarySubject: "Civil"})
 	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Ana", PrimarySubject: "Technology", SecondarySubject: "Digital Modeling"})
+  c.JSON(http.StatusOK, gin.H{"Tutor List": Tutors})
 }
 
 //binds subject JSON and posts matched tutors JSON to the webserver
