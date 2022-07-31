@@ -5,12 +5,13 @@ import (
 )
 
 func main() {
-	//router 
+	//router
 	r := gin.Default()
-	r.GET("/", Get)
+	r.Static("/", "./webapp/myapp/dist/myapp")
+	r.NoRoute(serveDefault)
 	r.Run(":8090")
 }
 
-func Get(c *gin.Context) {
-	c.String(200,"Hello World!")
+func serveDefault(c *gin.Context) {
+	c.File("./webapp/myapp/dist/myapp/index.html")
 }
