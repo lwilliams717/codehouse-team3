@@ -9,5 +9,5 @@ import (
 func main() {
 	router := gin.Default()
 	router.StaticFS("/more_static", http.Dir("my-files"))
-	router.Run(":8080")
+	router.Run(":8888")
 }
