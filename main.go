@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	fmt.Println("Hello World")
+	router := gin.Default()
+	router.StaticFS("/more_static", http.Dir("my-files"))
+	router.Run(":8080")
 }
