@@ -82,16 +82,39 @@ func GetNextId() int {
 
 //creates static list of tutors
 func createTutorList() {
-	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Mohammed", PrimarySubject: PrimarySubjects[0], SecondarySubject: Science[0]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Mohammed", PrimarySubject: PrimarySubjects[0], SecondarySubject: Science[0], Description: "Science is fun!"})
 	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Nushi", PrimarySubject: PrimarySubjects[1], SecondarySubject: Technology[0]})
 	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Wei", PrimarySubject: PrimarySubjects[2], SecondarySubject: Engineering[0]})
 	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "David", PrimarySubject: PrimarySubjects[3], SecondarySubject: Math[0]})
-	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Antonio", PrimarySubject: PrimarySubjects[0], SecondarySubject: Science[1]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Lauren", PrimarySubject: PrimarySubjects[0], SecondarySubject: Science[0], Description: "Science is fun!"})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Adrianna", PrimarySubject: PrimarySubjects[1], SecondarySubject: Technology[0]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Doreen", PrimarySubject: PrimarySubjects[2], SecondarySubject: Engineering[0]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Camila", PrimarySubject: PrimarySubjects[3], SecondarySubject: Math[0]})
+
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Antonio", PrimarySubject: PrimarySubjects[0], SecondarySubject: Science[1], Description: "Science is fun!"})
 	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Anita", PrimarySubject: PrimarySubjects[1], SecondarySubject: Technology[1]})
 	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Svetlana", PrimarySubject: PrimarySubjects[2], SecondarySubject: Engineering[1]})
 	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Mo", PrimarySubject: PrimarySubjects[3], SecondarySubject: Math[1]})
-	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Xiaoyan", PrimarySubject: PrimarySubjects[0], SecondarySubject: Science[2]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Bob", PrimarySubject: PrimarySubjects[0], SecondarySubject: Science[1], Description: "Science is fun!"})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Susan", PrimarySubject: PrimarySubjects[1], SecondarySubject: Technology[1]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "James", PrimarySubject: PrimarySubjects[2], SecondarySubject: Engineering[1]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Angel", PrimarySubject: PrimarySubjects[3], SecondarySubject: Math[1]})
+	
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Xiaoyan", PrimarySubject: PrimarySubjects[0], SecondarySubject: Science[2], Description: "Science is fun!"})
 	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Ana", PrimarySubject: PrimarySubjects[1], SecondarySubject: Technology[2]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Olivia", PrimarySubject: PrimarySubjects[2], SecondarySubject: Engineering[2]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Emma", PrimarySubject: PrimarySubjects[3], SecondarySubject: Math[2]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Amelia", PrimarySubject: PrimarySubjects[0], SecondarySubject: Science[2], Description: "Science is fun!"})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Liam", PrimarySubject: PrimarySubjects[1], SecondarySubject: Technology[2]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Elijah", PrimarySubject: PrimarySubjects[2], SecondarySubject: Engineering[2]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Mateo", PrimarySubject: PrimarySubjects[3], SecondarySubject: Math[2]})
+
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Gianna", PrimarySubject: PrimarySubjects[1], SecondarySubject: Technology[3]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Ezra", PrimarySubject: PrimarySubjects[2], SecondarySubject: Engineering[3]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Layla", PrimarySubject: PrimarySubjects[3], SecondarySubject: Math[3]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Daniel", PrimarySubject: PrimarySubjects[1], SecondarySubject: Technology[3]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Eliana", PrimarySubject: PrimarySubjects[2], SecondarySubject: Engineering[3]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "William", PrimarySubject: PrimarySubjects[3], SecondarySubject: Math[3]})
 }
 
 func PostTopics(c *gin.Context) {
