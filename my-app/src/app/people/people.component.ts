@@ -2,11 +2,16 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './people.component.html',
+  styleUrls: ['./people.component.scss']
 })
-export class AppComponent {
+export class PeopleComponent {
   title = 'my-app';
   show = true;
+
+  addPeopleBlock() {
+    
+  }
+
 }
 
