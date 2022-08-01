@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        h5 {
+            border-radius: 25px;
+            border: 2px solid #FFFFFF;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <a [routerLink]="['/testing']">testing</a> -->
+
+    <div style="margin: 250px">
+        <div class="px-4 pt-5 my-5 text-center">
+
+            <!-- title of the page -->
+            <h1 class="display-4 fw-bold">Edu Match</h1>
+            <div class="col-lg-6 mx-auto">
+
+                <!-- information  -->
+                <p class="lead mb-4">Select topics</p>
+
+                <!-- drop down buttons, each div is a different button -->
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5" style="display:flex">
+                    <div style="position:relative; left:-250px; top:2px;">
+                        <div class="row">
+                            <div class="col">
+                                <div ngbDropdown class="d-inline-block">
+                                    <button type="button" class="btn btn-outline-primary" id="dropdownBasic1"
+                                        ngbDropdownToggle>Science</button>
+                                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                        <button ngbDropdownItem [routerLink]="['/testing']">Biology</button>
+                                        <button ngbDropdownItem>Physics</button>
+                                        <button ngbDropdownItem>Chemistry</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position:relative; left:-95px; top:2px;">
+                        <div class="row">
+                            <div class="col">
+                                <div ngbDropdown class="d-inline-block">
+                                    <button type="button" class="btn btn-outline-primary" id="dropdownBasic1"
+                                        ngbDropdownToggle>Technology</button>
+                                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                        <button ngbDropdownItem>Computer Science</button>
+                                        <button ngbDropdownItem>Digital Modeling</button>
+                                        <button ngbDropdownItem>Machine Learning</button>
+                                        <button ngbDropdownItem>Game Development</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position:relative; left:95px; top:2px;">
+                        <div class="row">
+                            <div class="col">
+                                <div ngbDropdown class="d-inline-block">
+                                    <button type="button" class="btn btn-outline-primary" id="dropdownBasic1"
+                                        ngbDropdownToggle>Engineering</button>
+                                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                        <button ngbDropdownItem>Robotics</button>
+                                        <button ngbDropdownItem>Electronics</button>
+                                        <button ngbDropdownItem>Mechanical</button>
+                                        <button ngbDropdownItem>Civil</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position:relative; left:250px; top:2px;">
+                        <div class="row">
+                            <div class="col">
+                                <div ngbDropdown class="d-inline-block">
+                                    <button type="button" class="btn btn-outline-primary" id="dropdownBasic1"
+                                        ngbDropdownToggle>Math</button>
+                                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                        <button ngbDropdownItem>Algebra</button>
+                                        <button ngbDropdownItem>Geometry</button>
+                                        <button ngbDropdownItem>Calculus</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="overflow-hidden" style="max-height: 30vh;">
+              <div class="container px-5">
+                <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+              </div>
+            </div> -->
+        </div>
+
+    </div>
+
+    <!-- the start of the dark info section -->
+    <div class="bg-dark text-secondary px-4 py-5 text-center">
+        <div class="py-5">
+            <h1 class="display-5 fw-bold text-white">Our Engineers</h1>
+
+            <!-- start of engineer bios -->
+            <div class="col-lg-6 mx-auto" style="display:flex">
+                <div style="position:relative; left:-250px; top:2px;">
+                    <h5 class="text-white">Lauren</h5>
+                </div>
+                <div style="position:relative; left:-150px; top:2px;">
+                    <h5 class="text-white">Adrianna</h5>
+                </div>
+                <div style="position:relative; left:-50px; top:2px;">
+                    <h5 class="text-white">Camila</h5>
+                </div>
+                <div style="position:relative; left:50px; top:2px;">
+                    <h5 class="text-white">Doreen</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <router-outlet></router-outlet> -->
+</body>
+
+</html>
