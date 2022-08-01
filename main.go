@@ -15,6 +15,11 @@ type User struct {
 	Description 		string 	`json:"description"`
 }
 
+type Topic struct {
+	PrimarySubject      		string    	`json:"primary_subject"`
+	SecondarySubjects			[]string	`json:"secondary_subjects"`
+}
+
 //search format struct for the searched subject
 type Search struct{
 	PrimarySubject   				string 	`json:"primary_subject"`
@@ -89,6 +94,15 @@ func createTutorList() {
 	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Ana", PrimarySubject: PrimarySubjects[1], SecondarySubject: Technology[2]})
 }
 
+func PostTopics(c *gin.Context) {
+	var topics []Topic
+	topics = append(topics, Topic{PrimarySubject: PrimarySubjects[0], SecondarySubjects: Science[0:3]})
+	topics = append(topics, Topic{PrimarySubject: PrimarySubjects[1], SecondarySubjects: Technology[0:4]})
+	topics = append(topics, Topic{PrimarySubject: PrimarySubjects[2], SecondarySubjects: Engineering[0:4]})
+	topics = append(topics, Topic{PrimarySubject: PrimarySubjects[3], SecondarySubjects: Math[0:4]})
+	c.JSON(http.StatusOK, gin.H{"topics": topics})
+}
+
 //binds subject JSON and posts matched tutors JSON to the webserver
 func PostTutors(c *gin.Context) {
 	var item Search
@@ -97,14 +111,14 @@ func PostTutors(c *gin.Context) {
 		return
 	}
 
-	primary := item.PrimarySubject
-	var newTutors []User = match(primary)
+	secondary := item.SecondarySubject
+	var newTutors []User = match(secondary)
 	c.JSON(http.StatusOK, gin.H{"matched_tutors": newTutors})
 }
 
 //function to match subject to tutors and build list
 func match( subject string ) []User {
-	var newTutors []User
+	newTutors := []User{}
 	for _, tutor := range Tutors{
 		if subject == tutor.SecondarySubject{
 			newTutors = append(newTutors, tutor)
@@ -115,7 +129,7 @@ func match( subject string ) []User {
 
 func main() {
 	router := gin.Default()
-	//router.GET("/api/topics", )
+	router.POST("/api/topics", PostTopics)
 	createTutorList()
 	router.POST("/api/tutors", PostTutors)
 	router.Run(":8090")
