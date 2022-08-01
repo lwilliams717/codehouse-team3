@@ -27,6 +27,10 @@
                 <!-- information  -->
                 <p class="lead mb-4">Select topics</p>
 
+                <div>
+                <p *ngFor="let item of matched_tutors; let i = index">{{i}} {{ item.name }}</p>
+                </div>
+
                 <!-- drop down buttons, each div is a different button -->
                 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5" style="display:flex">
                     <div style="position:relative; left:-250px; top:2px;">
@@ -37,7 +41,7 @@
                                         ngbDropdownToggle>Science</button>
                                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                                         <button ngbDropdownItem [routerLink]="['/testing']">Biology</button>
-                                        <button ngbDropdownItem [routerLink]="['/people']">Physics</button>
+                                        <button ngbDropdownItem [routerLink]="['/people']" [state]="{ id:1 , name:'Angular'}">Physics</button>
                                         <button ngbDropdownItem>Chemistry</button>
                                     </div>
                                 </div>
