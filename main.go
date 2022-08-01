@@ -2,28 +2,29 @@ package main
 
 import (
 	"net/http"
+
 	"github.com/gin-gonic/gin"
 )
 
 //user format struct
 type User struct {
-	Id      			int    	`json:"id"`
-	UserType			string	`json:"user_type"` // either Tutor or Student
-	Name   				string 	`json:"name"`
-	PrimarySubject 		string 	`json:"primary_subject"`
-	SecondarySubject 	string 	`json:"secondary_subject"`
-	Description 		string 	`json:"description"`
+	Id               int    `json:"id"`
+	UserType         string `json:"user_type"` // either Tutor or Student
+	Name             string `json:"name"`
+	PrimarySubject   string `json:"primary_subject"`
+	SecondarySubject string `json:"secondary_subject"`
+	Description      string `json:"description"`
 }
 
 type Topic struct {
-	PrimarySubject      		string    	`json:"primary_subject"`
-	SecondarySubjects			[]string	`json:"secondary_subjects"`
+	PrimarySubject    string   `json:"primary_subject"`
+	SecondarySubjects []string `json:"secondary_subjects"`
 }
 
 //search format struct for the searched subject
-type Search struct{
-	PrimarySubject   				string 	`json:"primary_subject"`
-	SecondarySubject   				string 	`json:"secondary_subject"`
+type Search struct {
+	PrimarySubject   string `json:"primary_subject"`
+	SecondarySubject string `json:"secondary_subject"`
 }
 
 var nextId int = 0
@@ -117,10 +118,10 @@ func PostTutors(c *gin.Context) {
 }
 
 //function to match subject to tutors and build list
-func match( subject string ) []User {
+func match(subject string) []User {
 	newTutors := []User{}
-	for _, tutor := range Tutors{
-		if subject == tutor.SecondarySubject{
+	for _, tutor := range Tutors {
+		if subject == tutor.SecondarySubject {
 			newTutors = append(newTutors, tutor)
 		}
 	}
