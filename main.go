@@ -37,6 +37,13 @@ var Names = [...]string{
 	"Ana",
 }
 
+var PrimarySubjects = [...]string{
+	"Science",
+	"Technology",
+	"Engineering",
+	"Math",
+}
+
 var Science = [...]string{
 	"Biology",
 	"Physics",
@@ -70,17 +77,16 @@ func GetNextId() int {
 
 //creates static list of tutors
 func createTutorList() {
-	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Mohammed", PrimarySubject: "Technology", SecondarySubject: "Game Development"})
-	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Nushi", PrimarySubject: "Math", SecondarySubject: "Algebra"})
-	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Wei", PrimarySubject: "Math", SecondarySubject: "Geometry"})
-	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "David", PrimarySubject: "Technology", SecondarySubject: "Computer Science"})
-	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Antonio", PrimarySubject: "Technology", SecondarySubject: "Machine Learning"})
-	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Anita", PrimarySubject: "Science", SecondarySubject: "Physics"})
-	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Svetlana", PrimarySubject: "Engineering", SecondarySubject: "Electronics"})
-	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Mo", PrimarySubject: "Math", SecondarySubject: "Calculus"})
-	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Xiaoyan", PrimarySubject: "Engineering", SecondarySubject: "Civil"})
-	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Ana", PrimarySubject: "Technology", SecondarySubject: "Digital Modeling"})
-  c.JSON(http.StatusOK, gin.H{"Tutor List": Tutors})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Mohammed", PrimarySubject: PrimarySubjects[0], SecondarySubject: Science[0]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Nushi", PrimarySubject: PrimarySubjects[1], SecondarySubject: Technology[0]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Wei", PrimarySubject: PrimarySubjects[2], SecondarySubject: Engineering[0]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "David", PrimarySubject: PrimarySubjects[3], SecondarySubject: Math[0]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Antonio", PrimarySubject: PrimarySubjects[0], SecondarySubject: Science[1]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Anita", PrimarySubject: PrimarySubjects[1], SecondarySubject: Technology[1]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Svetlana", PrimarySubject: PrimarySubjects[2], SecondarySubject: Engineering[1]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Mo", PrimarySubject: PrimarySubjects[3], SecondarySubject: Math[1]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Xiaoyan", PrimarySubject: PrimarySubjects[0], SecondarySubject: Science[2]})
+	Tutors = append(Tutors, User{Id: GetNextId(), UserType: "Tutor", Name: "Ana", PrimarySubject: PrimarySubjects[1], SecondarySubject: Technology[2]})
 }
 
 //binds subject JSON and posts matched tutors JSON to the webserver
